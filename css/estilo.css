@@ -20,3 +20,14 @@ h1 span {
     font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
 }
+
+.tituloMovimientos{
+    font-family: "Roboto Slab", serif;
+    display: flex;
+	justify-content: center;
+	width: 300px;
+}
+.contenedorMovimientos{
+    margin-left: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}

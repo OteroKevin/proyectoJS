@@ -3,6 +3,23 @@ document.addEventListener("DOMContentLoaded", async function() {
     let transacciones = [];
     const outputDiv = document.getElementById("output");
 
+    
+    // Función para cargar transacciones desde una API externa
+    async function cargarTransaccionesDesdeAPI() {
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+            if (!response.ok) {
+                throw new Error('No se pudo cargar las transacciones desde la API');
+            }
+            transacciones = await response.json();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    // Llamar a la función para cargar transacciones desde la API
+    await cargarTransaccionesDesdeAPI();
+
     while (true) {
         const opcion = await Swal.fire({
             title: `Bienvenido al Banco Otero. Tu saldo actual es: ${saldo}`,
